@@ -43,7 +43,7 @@ const Banner = (props) => {
                     </li>
                   </div>
                 </ul>
-                <h1 className="tracking-in-contract-bck-bottom">
+                <h1 className="tracking-in-contract-bck-bottom" style={{color: "#fff"}}>
                   {props.title}
                 </h1>
                 <p className="text-focus-in">{props.subtitle}</p>
