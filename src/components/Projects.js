@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Roll from "react-reveal/Roll";
 import Fade from "react-reveal/Fade";
+import { db } from "../configs/firebase";
+
 import {
   FaGithub,
   FaCamera,
@@ -16,95 +18,151 @@ import {
   FaSort,
 } from "react-icons/fa";
 const Projects = () => {
-  const [header] = React.useState({
-    mainHeader: "PROJECTS",
-    subHeading: "My Projects",
-    text:
-      "Below you'll find my most favourite projects from Flutter and React! Make sure to click on them if you like them to get redirected to GitHub",
+  const [des, setDes] = useState("");
+
+  const [project1Name, setProject1Name] = useState({});
+
+  const [project2Name, setProject2Name] = useState({});
+
+  const [project3Name, setProject3Name] = useState({});
+
+  const [project4Name, setProject4Name] = useState({});
+
+  const [project5Name, setProject5Name] = useState({});
+
+  const [project6Name, setProject6Name] = useState({});
+
+  useEffect(() => {
+    db.collection("pages")
+      .doc("ProjectsPage")
+      .get()
+      .then((snap) => {
+        let tempDes = snap.data()["desc"];
+        setDes(tempDes);
+        let project1 = snap.data()["project1"];
+        let project2 = snap.data()["project2"];
+        let project3 = snap.data()["project3"];
+        let project4 = snap.data()["project4"];
+        let project5 = snap.data()["project5"];
+        let project6 = snap.data()["project6"];
+
+        setProject1Name(project1);
+        setProject2Name(project2);
+        setProject3Name(project3);
+        setProject4Name(project4);
+        setProject5Name(project5);
+        setProject6Name(project6);
+      });
   });
-
-  // const [names, setNames] = useState([]);
-
-  // const fetchGithubData = async () => {
-  //   const res = await axios.get(" https://api.github.com/users/rivaanranawat/repos");
-  //   for (let i = 0; i < res.data.length; i++) {
-  //     setNames(res.data[i]["name"]);
-  //   }
-  //   console.log(names);
-  // }
-
-  // fetchGithubData();
-  const [state] = React.useState([
-    {
-      id: 1,
-      icon: <FaBook className="commonIcons" />,
-      heading: "Turn Pages",
-      text: "Book Reading With Your Friends Made Possible with this App!",
-      link: "https://github.com/RivaanRanawat/r",
-    },
-    {
-      id: 2,
-      icon: <FaCode className="commonIcons" />,
-      heading: "Basica",
-      text: "My own programming language with basic features!",
-      link: "https://github.com/RivaanRanawat/basica",
-    },
-    {
-      id: 3,
-      icon: <FaCircleNotch className="commonIcons" />,
-      heading: "Astra",
-      text: "A video chatting and texting app!",
-      link: "https://github.com/RivaanRanawat/astra",
-    },
-    {
-      id: 4,
-      icon: <FaConnectdevelop className="commonIcons" />,
-      heading: "Connect World",
-      text: "Chatting Website to find strangers and connect with them!",
-      link: "https://github.com/RivaanRanawat/connectworld",
-    },
-    {
-      id: 5,
-      icon: <FaVideo className="commonIcons" />,
-      heading: "Zoom Clone",
-      text: "Video Conferencing App like Zoom",
-      link: "https://github.com/RivaanRanawat/zoom-clone",
-    },
-    {
-      id: 6,
-      icon: <FaSort className="commonIcons" />,
-      heading: "Sorting Visualizer",
-      text: "An App to visualise famous Sorting Algorithms",
-      link: "https://github.com/RivaanRanawat/sorting-visualiser",
-    },
-  ]);
   return (
     <div className="services">
       <div className="container">
         <div className="services__header">
           <Fade top>
             <div className="common">
-              <h3 className="heading">{header.mainHeader}</h3>
-              <h1 className="mainHeader">{header.subHeading}</h1>
-              <p className="mainContent">{header.text}</p>
+              <h3 className="heading">PROJECTS</h3>
+              <h1 className="mainHeader">My Projects</h1>
+              <p className="mainContent">{des}</p>
               <div className="commonBorder"></div>
             </div>
           </Fade>
 
           <div className="row bgMain">
-            {state.map((info) => (
-              <Fade left>
-                <div className="col-4 bgMain">
-                  <a href={info.link}>
-                    <div className="services__box">
-                      {info.icon}
-                      <div className="services__box-header">{info.heading}</div>
-                      <div className="services__box-p">{info.text}</div>
+            <Fade left>
+              <div className="col-4 bgMain">
+                <a href={project1Name["projectLink"]}>
+                  <div className="services__box">
+                    <FaBook className="commonIcons" />
+                    <div className="services__box-header">
+                      {project1Name["projectName"]}
                     </div>
-                  </a>
-                </div>
-              </Fade>
-            ))}
+                    <div className="services__box-p">
+                      {project1Name["projectDes"]}
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </Fade>
+
+            <Fade left>
+              <div className="col-4 bgMain">
+                <a href={project2Name["projectLink"]}>
+                  <div className="services__box">
+                    <FaCode className="commonIcons" />
+                    <div className="services__box-header">
+                      {project2Name["projectName"]}
+                    </div>
+                    <div className="services__box-p">
+                      {project2Name["projectDes"]}
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </Fade>
+
+            <Fade left>
+              <div className="col-4 bgMain">
+                <a href={project3Name["projectLink"]}>
+                  <div className="services__box">
+                    <FaCircleNotch className="commonIcons" />
+                    <div className="services__box-header">
+                      {project3Name["projectName"]}
+                    </div>
+                    <div className="services__box-p">
+                      {project3Name["projectDes"]}
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </Fade>
+
+            <Fade left>
+              <div className="col-4 bgMain">
+                <a href={project4Name["projectLink"]}>
+                  <div className="services__box">
+                    <FaConnectdevelop className="commonIcons" />
+                    <div className="services__box-header">
+                      {project4Name["projectName"]}
+                    </div>
+                    <div className="services__box-p">
+                      {project4Name["projectDes"]}
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </Fade>
+
+            <Fade left>
+              <div className="col-4 bgMain">
+                <a href={project5Name["projectLink"]}>
+                  <div className="services__box">
+                    <FaVideo className="commonIcons" />
+                    <div className="services__box-header">
+                      {project5Name["projectName"]}
+                    </div>
+                    <div className="services__box-p">
+                      {project5Name["projectDes"]}
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </Fade>
+
+            <Fade left>
+              <div className="col-4 bgMain">
+                <a href={project6Name["projectLink"]}>
+                  <div className="services__box">
+                    <FaSort className="commonIcons" />
+                    <div className="services__box-header">
+                      {project6Name["projectName"]}
+                    </div>
+                    <div className="services__box-p">
+                      {project6Name["projectDes"]}
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </Fade>
           </div>
         </div>
       </div>

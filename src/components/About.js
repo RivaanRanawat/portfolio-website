@@ -1,8 +1,35 @@
-import React from "react";
+import React,{useEffect, useState} from "react";
 import Zoom from "react-reveal/Zoom";
 import Fade from "react-reveal/Fade";
+import {db} from "../configs/firebase";
 
 const About = () => {
+  const[para1, setPara1] = useState("");
+  const[para2, setPara2] = useState("");
+  const[email, setEmail] = useState("");
+  const[headerr, setHeaderr] = useState("");
+  const[name, setName] = useState("");
+  const[phone, setPhone] = useState("");
+
+  useEffect(() => {
+    db.collection("pages").doc("AboutPage").get().then(snap => {
+      let tempPara1 = snap.data()["description1"];
+      let tempPara2= snap.data()["description2"];
+      let tempEmail = snap.data()["email"];
+      let tempPhone = snap.data()["phone"];
+      let tempHeader = snap.data()["header"];
+      let tempName = snap.data()["name"];
+
+      setPara1(tempPara1);
+      setPara2(tempPara2);
+      setEmail(tempEmail);
+      setHeaderr(tempHeader);
+      setName(tempName);
+      setPhone(tempPhone);
+
+    })
+  });
+
   const [header] = React.useState({
     subHeader: "About Me",
     text: "",
@@ -32,32 +59,40 @@ const About = () => {
           <div className="col-6">
             <div className="about__info">
               <Fade top>
-                <h1>Hello There</h1>
+                <h1>{headerr}</h1>
               </Fade>
 
               <Fade right>
                 <div className="about__info-p1">
-                  I'm Rivaan Ranawat, 15 year old tech and coding enthusiast
-                  from India! I create websites and mobile apps for fun.
+                  {para1}
                 </div>
               </Fade>
 
               <Fade right>
                 <div className="about__info-p2">
-                  I am also interested in gaming and have played many games like
-                  PUBG, Fortnite, CS:GO, CODM.
+                  {para2}
                 </div>
               </Fade>
 
               <Fade bottom>
                 <div className="info__contacts">
                   <div className="row">
-                    {state.map((info) => (
                       <div className="col-6">
-                        <strong className="aboutText">{info.title}</strong>
-                        <p className="aboutText">{info.text}</p>
+                        <strong className="aboutText">Name: </strong>
+                        <p className="aboutText">{name}</p>
                       </div>
-                    ))}
+                      <div className="col-6">
+                        <strong className="aboutText">Email:</strong>
+                        <p className="aboutText">{email}</p>
+                      </div>
+                      <div className="col-6">
+                        <strong className="aboutText">Phone:</strong>
+                        <p className="aboutText">{phone}</p>
+                      </div>
+                      <div className="col-6">
+                        <strong className="aboutText">GitHub:</strong>
+                        <p className="aboutText">rivaanranawat</p>
+                      </div>
                   </div>
                 </div>
               </Fade>

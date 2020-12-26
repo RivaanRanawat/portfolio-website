@@ -7,14 +7,23 @@ import {
   FaPlay,
   FaMouse,
 } from "react-icons/fa";
+import {db} from "../configs/firebase";
 
 const Banner = () => {
 
+  const[title, setTitle] = useState("");
+  const[subtitle, setSubtitle] = useState("");
+  useEffect(() => {
+    db.collection("pages").doc("HomePage").get().then( snapshot => {
+      const dataTitle = snapshot.data()["title"];
+      const dataSubtitle = snapshot.data()["subtitle"];
+      setTitle(dataTitle);
+      setSubtitle(dataSubtitle);
+    })
+    .catch( error => console.log(error))
+  })
+
   const [state] = React.useState({
-    title: "I am Rivaan Ranawat",
-    text:
-      "I'm Rivaan, professional web developer with long time \
-    experience in this field​",
     image: "/images/my-avatar.png",
   });
 
@@ -48,9 +57,9 @@ const Banner = () => {
                   </div>
                 </ul>
                 <h1 className="tracking-in-contract-bck-bottom">
-                  {state.title}
+                  {title}
                 </h1>
-                <p className="text-focus-in">{state.text}</p>
+                <p className="text-focus-in">{subtitle}</p>
                 <div className="header__buttons">
                   <a
                     href="https://github.com/rivaanranawat"
