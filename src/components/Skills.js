@@ -1,29 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Flip from "react-reveal/Flip";
 import Fade from "react-reveal/Fade";
-import { db } from "../configs/firebase";
 
-const Skills = () => {
-  const [des, setDes] = useState("");
-  const [gamesArray, setGamesArray] = useState([]);
-  const [technologyArray, setTechnologyArray] = useState([]);
-  const [languageArray, setLanguageArray] = useState([]);
-
-  useEffect(() => {
-    db.collection("pages")
-      .doc("SkillsPage")
-      .get()
-      .then((snap) => {
-        let tempDes = snap.data()["des"];
-        let tempGamesArray = snap.data()["games"];
-        let tempTechnologyArray = snap.data()["technologies"];
-        let tempLanguageArray = snap.data()["languages"];
-        setDes(tempDes);
-        setGamesArray(tempGamesArray);
-        setTechnologyArray(tempTechnologyArray);
-        setLanguageArray(tempLanguageArray);
-      });
-  });
+const Skills = (props) => {
 
   const [header] = React.useState({
     subHeading: "MY SKILLS",
@@ -36,7 +15,7 @@ const Skills = () => {
           <div className="common">
             <h3 className="heading"></h3>
             <h1 className="mainHeader">{header.subHeading}</h1>
-            <p className="mainContent">{des}</p>
+            <p className="mainContent">{props.des}</p>
             <div className="commonBorder"></div>
           </div>
         </Fade>
@@ -50,10 +29,10 @@ const Skills = () => {
                   <span>%</span>
                 </div>
                 <ul>
-                  <li>{technologyArray[0]}</li>
-                  <li>{technologyArray[1]}</li>
-                  <li>{technologyArray[2]}</li>
-                  <li>{technologyArray[3]}</li>
+                  <li>{props.technologyArray[0]}</li>
+                  <li>{props.technologyArray[1]}</li>
+                  <li>{props.technologyArray[2]}</li>
+                  <li>{props.technologyArray[3]}</li>
                 </ul>
                 <div className="price__btn">
                   <a href="" className="btn btn-outline">
@@ -72,10 +51,10 @@ const Skills = () => {
                   <span>%</span>
                 </div>
                 <ul>
-                  <li>{languageArray[0]}</li>
-                  <li>{languageArray[1]}</li>
-                  <li>{languageArray[2]}</li>
-                  <li>{languageArray[3]}</li>
+                  <li>{props.languageArray[0]}</li>
+                  <li>{props.languageArray[1]}</li>
+                  <li>{props.languageArray[2]}</li>
+                  <li>{props.languageArray[3]}</li>
                 </ul>
                 <div className="price__btn">
                   <a href="" className="btn btn-outline">
@@ -95,10 +74,10 @@ const Skills = () => {
                   <span>%</span>
                 </div>
                 <ul>
-                  <li>{gamesArray[0]}</li>
-                  <li>{gamesArray[1]}</li>
-                  <li>{gamesArray[2]}</li>
-                  <li>{gamesArray[3]}</li>
+                  <li>{props.gamesArray[0]}</li>
+                  <li>{props.gamesArray[1]}</li>
+                  <li>{props.gamesArray[2]}</li>
+                  <li>{props.gamesArray[3]}</li>
                 </ul>
                   <div className="price__btn">
                     <a href="" className="btn btn-outline">
