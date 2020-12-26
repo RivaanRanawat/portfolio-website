@@ -9,6 +9,11 @@ import {
   FaApple,
   FaFileVideo,
   FaSearchDollar,
+  FaCode,
+  FaBook,
+  FaVideo,
+  FaConnectdevelop,
+  FaSort,
 } from "react-icons/fa";
 const Projects = () => {
   const [header] = React.useState({
@@ -32,51 +37,45 @@ const Projects = () => {
   const [state] = React.useState([
     {
       id: 1,
-      icon: <FaGithub className="commonIcons" />,
-      heading: "Web Development",
-      text:
-        "Lorem Ipsum is simply dummy text of the printing typesetting\
-      industry. simply dummy",
+      icon: <FaBook className="commonIcons" />,
+      heading: "Turn Pages",
+      text: "Book Reading With Your Friends Made Possible with this App!",
+      link: "https://github.com/RivaanRanawat/r",
     },
     {
       id: 2,
-      icon: <FaCamera className="commonIcons" />,
-      heading: "Photography",
-      text:
-        "Lorem Ipsum is simply dummy text of the printing typesetting\
-        industry. simply dummy",
+      icon: <FaCode className="commonIcons" />,
+      heading: "Basica",
+      text: "My own programming language with basic features!",
+      link: "https://github.com/RivaanRanawat/basica",
     },
     {
       id: 3,
       icon: <FaCircleNotch className="commonIcons" />,
-      heading: "Web Desing",
-      text:
-        "Lorem Ipsum is simply dummy text of the printing typesetting\
-        industry. simply dummy",
+      heading: "Astra",
+      text: "A video chatting and texting app!",
+      link: "https://github.com/RivaanRanawat/astra",
     },
     {
       id: 4,
-      icon: <FaApple className="commonIcons" />,
-      heading: "App Devlopment",
-      text:
-        "Lorem Ipsum is simply dummy text of the printing typesetting\
-        industry. simply dummy",
+      icon: <FaConnectdevelop className="commonIcons" />,
+      heading: "Connect World",
+      text: "Chatting Website to find strangers and connect with them!",
+      link: "https://github.com/RivaanRanawat/connectworld",
     },
     {
       id: 5,
-      icon: <FaFileVideo className="commonIcons" />,
-      heading: "Video Editing",
-      text:
-        "Lorem Ipsum is simply dummy text of the printing typesetting\
-        industry. simply dummy",
+      icon: <FaVideo className="commonIcons" />,
+      heading: "Zoom Clone",
+      text: "Video Conferencing App like Zoom",
+      link: "https://github.com/RivaanRanawat/zoom-clone",
     },
     {
       id: 6,
-      icon: <FaSearchDollar className="commonIcons" />,
-      heading: "SEO Expert",
-      text:
-        "Lorem Ipsum is simply dummy text of the printing typesetting\
-        industry. simply dummy",
+      icon: <FaSort className="commonIcons" />,
+      heading: "Sorting Visualizer",
+      text: "An App to visualise famous Sorting Algorithms",
+      link: "https://github.com/RivaanRanawat/sorting-visualiser",
     },
   ]);
   return (
@@ -96,11 +95,13 @@ const Projects = () => {
             {state.map((info) => (
               <Fade left>
                 <div className="col-4 bgMain">
-                  <div className="services__box">
-                    {info.icon}
-                    <div className="services__box-header">{info.heading}</div>
-                    <div className="services__box-p">{info.text}</div>
-                  </div>
+                  <a href={info.link}>
+                    <div className="services__box">
+                      {info.icon}
+                      <div className="services__box-header">{info.heading}</div>
+                      <div className="services__box-p">{info.text}</div>
+                    </div>
+                  </a>
                 </div>
               </Fade>
             ))}

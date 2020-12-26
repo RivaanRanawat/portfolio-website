@@ -2,7 +2,7 @@ import React from "react";
 import Flip from "react-reveal/Flip";
 import Fade from "react-reveal/Fade";
 
-const Prices = () => {
+const Skills = () => {
   const [header] = React.useState({
     mainHeader: "",
     subHeading: "MY SKILLS",
@@ -153,4 +153,4 @@ const Prices = () => {
   );
 };
 
-export default Prices;
+export default Skills;

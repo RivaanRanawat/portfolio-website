@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   FaFacebookF,
   FaTwitter,
@@ -7,8 +7,9 @@ import {
   FaPlay,
   FaMouse,
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
+
 const Banner = () => {
+
   const [state] = React.useState({
     title: "I am Rivaan Ranawat",
     text:
