@@ -6,10 +6,10 @@ import {
   FaInstagram,
   FaPlay,
   FaMouse,
+  FaGithub,
 } from "react-icons/fa";
 
 const Banner = (props) => {
-
   const [state] = React.useState({
     image: "/images/my-avatar.png",
   });
@@ -21,29 +21,40 @@ const Banner = (props) => {
           <div className="col-6">
             <div className="header__content">
               <div className="header__section">
-                <ul className="header__ul">
+                <ul className="header__ul" style={{ color: "#fff" }}>
                   <div className="jello-horizontal">
-                    <li>
-                      <FaFacebookF className="headerIcon" />
-                    </li>
+                    <a href="https://facebook.com/rivaanranawat" style={{color: "#fff"}}>
+                      <li>
+                        <FaFacebookF className="headerIcon" />
+                      </li>
+                    </a>
                   </div>
                   <div className="jello-horizontal1">
-                    <li>
-                      <FaTwitter className="headerIcon" />
-                    </li>
+                    <a href="https://twitter.com/rivaanranawat" style={{color: "#fff"}}>
+                      <li>
+                        <FaTwitter className="headerIcon" />
+                      </li>
+                    </a>
                   </div>
                   <div className="jello-horizontal2">
-                    <li>
-                      <FaPinterest className="headerIcon" />
-                    </li>
+                    <a href="https://github.com/rivaanranawat" style={{color: "#fff"}}>
+                      <li>
+                        <FaGithub className="headerIcon" />
+                      </li>
+                    </a>
                   </div>
                   <div className="jello-horizontal3">
-                    <li>
-                      <FaInstagram className="headerIcon" />
-                    </li>
+                    <a href="https://instagram.com/optimalcoding" style={{color: "#fff"}}>
+                      <li>
+                        <FaInstagram className="headerIcon" />
+                      </li>
+                    </a>
                   </div>
                 </ul>
-                <h1 className="tracking-in-contract-bck-bottom" style={{color: "#fff"}}>
+                <h1
+                  className="tracking-in-contract-bck-bottom"
+                  style={{ color: "#fff" }}
+                >
                   {props.title}
                 </h1>
                 <p className="text-focus-in">{props.subtitle}</p>

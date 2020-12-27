@@ -117,6 +117,7 @@ body {
 .header__ul li:hover .headerIcon {
   color: #ff4a57;
 }
+
 .header__ul li:first-child {
   margin-left: 0;
 }
@@ -785,10 +786,11 @@ textarea.input1 + .shadow-input1 {
 .input1 {
   display: block;
   width: 100%;
-  background: #e6e6e6;
+  background: #19273E;
   font-size: 15px;
   line-height: 1.5;
-  color: #ff4a57;
+  color: #8b98af;
+  border: none;
 }
 
 .shadow-input1 {

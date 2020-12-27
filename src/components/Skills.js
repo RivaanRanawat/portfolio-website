@@ -25,7 +25,7 @@ const Skills = (props) => {
               <div className="price">
                 <div className="priceHeading">Technologies</div>
                 <div className="price__rs">
-                  70
+                  {props.techPercent}
                   <span>%</span>
                 </div>
                 <ul>
@@ -47,7 +47,7 @@ const Skills = (props) => {
               <div className="price">
                 <div className="priceHeading">PROGRAMMING LANGUAGES</div>
                 <div className="price__rs">
-                  80
+                  {props.langPercent}
                   <span>%</span>
                 </div>
                 <ul>
@@ -70,7 +70,7 @@ const Skills = (props) => {
               <div className="price">
                 <div className="priceHeading">GAMING</div>
                 <div className="price__rs">
-                  20
+                  {props.gamingPercent}
                   <span>%</span>
                 </div>
                 <ul>

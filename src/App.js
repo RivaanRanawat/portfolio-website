@@ -27,6 +27,9 @@ const App = () => {
   const [gamesArray, setGamesArray] = useState([]);
   const [technologyArray, setTechnologyArray] = useState([]);
   const [languageArray, setLanguageArray] = useState([]);
+  const [techPercent, setTechPercent] = useState("");
+  const [langPercent, setLangPercent] = useState("");
+  const [gamingPercent, setGamingPercent] = useState("");
 
   // PROJECTS PAGE HOOKS
   const [desc, setDesc] = useState("");
@@ -42,7 +45,6 @@ const App = () => {
   const [project5Name, setProject5Name] = useState({});
 
   const [project6Name, setProject6Name] = useState({});
-
 
   useEffect(() => {
     setIsLoading(true);
@@ -87,10 +89,16 @@ const App = () => {
         let tempGamesArray = snap.data()["games"];
         let tempTechnologyArray = snap.data()["technologies"];
         let tempLanguageArray = snap.data()["languages"];
+        let tempGamingPercent = snap.data()["gamesPercent"];
+        let tempTechPercent = snap.data()["techPercent"];
+        let tempLangPercent = snap.data()["langPercent"];
         setDes(tempDes);
         setGamesArray(tempGamesArray);
         setTechnologyArray(tempTechnologyArray);
         setLanguageArray(tempLanguageArray);
+        setLangPercent(tempLangPercent);
+        setTechPercent(tempTechPercent);
+        setGamingPercent(tempGamingPercent);
       });
 
     // projects
@@ -114,7 +122,13 @@ const App = () => {
         setProject5Name(project5);
         setProject6Name(project6);
       });
-    setIsLoading(false);
+
+    setTimeout(
+      function () {
+        setIsLoading(false);
+      }.bind(this),
+      Math.floor(Math.random() * 2000) + 100
+    );
   }, []);
 
   return (
@@ -127,10 +141,33 @@ const App = () => {
       ) : (
         <div>
           <Nav />
-          <Banner title={title} subtitle={subtitle}/>
-          <About para1={para1} para2={para2} headerr={headerr} email={email} name={name} phone={phone}/>
-          <Skills des={des} gamesArray={gamesArray} technologyArray={technologyArray} languageArray={languageArray}/>
-          <Projects desc={desc} project1Name={project1Name} project2Name={project2Name} project3Name={project3Name} project4Name={project4Name} project5Name={project5Name} project6Name={project6Name}/>
+          <Banner title={title} subtitle={subtitle} />
+          <About
+            para1={para1}
+            para2={para2}
+            headerr={headerr}
+            email={email}
+            name={name}
+            phone={phone}
+          />
+          <Skills
+            des={des}
+            gamesArray={gamesArray}
+            technologyArray={technologyArray}
+            languageArray={languageArray}
+            techPercent={techPercent}
+            gamingPercent={gamingPercent}
+            langPercent={langPercent}
+          />
+          <Projects
+            desc={desc}
+            project1Name={project1Name}
+            project2Name={project2Name}
+            project3Name={project3Name}
+            project4Name={project4Name}
+            project5Name={project5Name}
+            project6Name={project6Name}
+          />
           <Contact />
         </div>
       )}
