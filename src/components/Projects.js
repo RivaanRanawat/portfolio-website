@@ -17,7 +17,43 @@ import {
   FaConnectdevelop,
   FaSort,
 } from "react-icons/fa";
-const Projects = (props) => {
+const Projects = () => {
+  const [desc, setDesc] = useState("");
+
+  const [project1Name, setProject1Name] = useState({});
+
+  const [project2Name, setProject2Name] = useState({});
+
+  const [project3Name, setProject3Name] = useState({});
+
+  const [project4Name, setProject4Name] = useState({});
+
+  const [project5Name, setProject5Name] = useState({});
+
+  const [project6Name, setProject6Name] = useState({});
+
+  useEffect(() => {
+    db.collection("pages")
+    .doc("ProjectsPage")
+    .get()
+    .then((snap) => {
+      let tempDes = snap.data()["desc"];
+      setDesc(tempDes);
+      let project1 = snap.data()["project1"];
+      let project2 = snap.data()["project2"];
+      let project3 = snap.data()["project3"];
+      let project4 = snap.data()["project4"];
+      let project5 = snap.data()["project5"];
+      let project6 = snap.data()["project6"];
+
+      setProject1Name(project1);
+      setProject2Name(project2);
+      setProject3Name(project3);
+      setProject4Name(project4);
+      setProject5Name(project5);
+      setProject6Name(project6);
+    });
+  }, [])
   return (
     <div className="services">
       <div className="container">
@@ -26,7 +62,7 @@ const Projects = (props) => {
             <div className="common">
               <h3 className="heading">PROJECTS</h3>
               <h1 className="mainHeader">My Projects</h1>
-              <p className="mainContent">{props.desc}</p>
+              <p className="mainContent">{desc}</p>
               <div className="commonBorder"></div>
             </div>
           </Fade>
@@ -34,14 +70,14 @@ const Projects = (props) => {
           <div className="row bgMain">
             <Fade left>
               <div className="col-4 bgMain">
-                <a href={props.project1Name["projectLink"]}>
+                <a href={project1Name["projectLink"]}>
                   <div className="services__box">
                     <FaBook className="commonIcons" />
                     <div className="services__box-header">
-                      {props.project1Name["projectName"]}
+                      {project1Name["projectName"]}
                     </div>
                     <div className="services__box-p">
-                      {props.project1Name["projectDes"]}
+                      {project1Name["projectDes"]}
                     </div>
                   </div>
                 </a>
@@ -50,14 +86,14 @@ const Projects = (props) => {
 
             <Fade left>
               <div className="col-4 bgMain">
-                <a href={props.project2Name["projectLink"]}>
+                <a href={project2Name["projectLink"]}>
                   <div className="services__box">
                     <FaCode className="commonIcons" />
                     <div className="services__box-header">
-                      {props.project2Name["projectName"]}
+                      {project2Name["projectName"]}
                     </div>
                     <div className="services__box-p">
-                      {props.project2Name["projectDes"]}
+                      {project2Name["projectDes"]}
                     </div>
                   </div>
                 </a>
@@ -66,14 +102,14 @@ const Projects = (props) => {
 
             <Fade left>
               <div className="col-4 bgMain">
-                <a href={props.project3Name["projectLink"]}>
+                <a href={project3Name["projectLink"]}>
                   <div className="services__box">
                     <FaCircleNotch className="commonIcons" />
                     <div className="services__box-header">
-                      {props.project3Name["projectName"]}
+                      {project3Name["projectName"]}
                     </div>
                     <div className="services__box-p">
-                      {props.project3Name["projectDes"]}
+                      {project3Name["projectDes"]}
                     </div>
                   </div>
                 </a>
@@ -82,14 +118,14 @@ const Projects = (props) => {
 
             <Fade left>
               <div className="col-4 bgMain">
-                <a href={props.project4Name["projectLink"]}>
+                <a href={project4Name["projectLink"]}>
                   <div className="services__box">
                     <FaConnectdevelop className="commonIcons" />
                     <div className="services__box-header">
-                      {props.project4Name["projectName"]}
+                      {project4Name["projectName"]}
                     </div>
                     <div className="services__box-p">
-                      {props.project4Name["projectDes"]}
+                      {project4Name["projectDes"]}
                     </div>
                   </div>
                 </a>
@@ -98,14 +134,14 @@ const Projects = (props) => {
 
             <Fade left>
               <div className="col-4 bgMain">
-                <a href={props.project5Name["projectLink"]}>
+                <a href={project5Name["projectLink"]}>
                   <div className="services__box">
                     <FaVideo className="commonIcons" />
                     <div className="services__box-header">
-                      {props.project5Name["projectName"]}
+                      {project5Name["projectName"]}
                     </div>
                     <div className="services__box-p">
-                      {props.project5Name["projectDes"]}
+                      {project5Name["projectDes"]}
                     </div>
                   </div>
                 </a>
@@ -114,14 +150,14 @@ const Projects = (props) => {
 
             <Fade left>
               <div className="col-4 bgMain">
-                <a href={props.project6Name["projectLink"]}>
+                <a href={project6Name["projectLink"]}>
                   <div className="services__box">
                     <FaSort className="commonIcons" />
                     <div className="services__box-header">
-                      {props.project6Name["projectName"]}
+                      {project6Name["projectName"]}
                     </div>
                     <div className="services__box-p">
-                      {props.project6Name["projectDes"]}
+                      {project6Name["projectDes"]}
                     </div>
                   </div>
                 </a>

@@ -5,6 +5,13 @@ import {db} from "../configs/firebase";
 
 const About = (props) => {
 
+  const [para1, setPara1] = useState("");
+  const [para2, setPara2] = useState("");
+  const [email, setEmail] = useState("");
+  const [headerr, setHeaderr] = useState("");
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+
   const [header] = React.useState({
     subHeader: "About Me",
     text: "",
@@ -15,6 +22,27 @@ const About = (props) => {
     { id: 3, title: "Phone:", text: "+91 9372656584" },
     { id: 4, title: "GitHub", text: "rivaanranawat" },
   ]);
+
+  useEffect(() => {
+    db.collection("pages")
+      .doc("AboutPage")
+      .get()
+      .then((snap) => {
+        let tempPara1 = snap.data()["description1"];
+        let tempPara2 = snap.data()["description2"];
+        let tempEmail = snap.data()["email"];
+        let tempPhone = snap.data()["phone"];
+        let tempHeader = snap.data()["header"];
+        let tempName = snap.data()["name"];
+
+        setPara1(tempPara1);
+        setPara2(tempPara2);
+        setEmail(tempEmail);
+        setHeaderr(tempHeader);
+        setName(tempName);
+        setPhone(tempPhone);
+      });
+  }, [])
   return (
     <div className="about">
       <div className="container">
@@ -34,18 +62,18 @@ const About = (props) => {
           <div className="col-6">
             <div className="about__info">
               <Fade top>
-                <h1>{props.headerr}</h1>
+                <h1>{headerr}</h1>
               </Fade>
 
               <Fade right>
                 <div className="about__info-p1">
-                  {props.para1}
+                  {para1}
                 </div>
               </Fade>
 
               <Fade right>
                 <div className="about__info-p2">
-                  {props.para2}
+                  {para2}
                 </div>
               </Fade>
 
@@ -54,15 +82,15 @@ const About = (props) => {
                   <div className="row">
                       <div className="col-6">
                         <strong className="aboutText">Name: </strong>
-                        <p className="aboutText">{props.name}</p>
+                        <p className="aboutText">{name}</p>
                       </div>
                       <div className="col-6">
                         <strong className="aboutText">Email:</strong>
-                        <p className="aboutText">{props.email}</p>
+                        <p className="aboutText">{email}</p>
                       </div>
                       <div className="col-6">
                         <strong className="aboutText">Phone:</strong>
-                        <p className="aboutText">{props.phone}</p>
+                        <p className="aboutText">{phone}</p>
                       </div>
                       <div className="col-6">
                         <strong className="aboutText">GitHub:</strong>
