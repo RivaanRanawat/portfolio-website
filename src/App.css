@@ -30,21 +30,35 @@ html {
   --commonBorder: #0556f3;
   --hoverColor: #0556f3;
   --btnColor: #fff;
+  --aboutNames: #0556f3;
+  --cardFontColor: #25265eb3;
+  --lightModeCardSubtitleColor: #25265eb3;
+  --percentCardColor: #0556f3;
+  --cardBorderColor: #0556f3;
+  --contactBtnColor: #0556f3;
+  --socialMediaIconBorderColor: #25265e;
   background-color: var(--lightModeBackgroundColor);
 }
 
 @media (prefers-color-scheme: dark) {
   html.dark {
-    --lightModeBackgroundColor: #242424;
-    --lightModeTitleColor: #e14eca;
-    --lightModeSubtitleColor: #ffffff91;
+    --lightModeBackgroundColor: #021F34;
+    --lightModeTitleColor: #fff;
+    --lightModeSubtitleColor: #98c0c6;
     --iconColor: #fff;
     --insideIconColor: #e14eca;
-    --navBarColor: #242424;
-    --cardColor: #1B1B1B;
+    --navBarColor: #021F34;
+    --cardColor: #01162A;
     --commonBorder: #00AAF2;
-    --hoverColor: #e14eca;
-    --btnColor: #e14eca;
+    --hoverColor: #00AAF2;
+    --btnColor: #00AAF2;
+    --aboutNames: #00AAF2;
+    --cardFontColor: #98c0c6;
+    --lightModeCardSubtitleColor: #fff;
+    --percentCardColor: #00AAF2;
+    --cardBorderColor: #00AAF2;
+    --contactBtnColor: #00AAF2;
+    --socialMediaIconBorderColor: #00AAF2;
   }
 }
 
@@ -141,7 +155,8 @@ body {
 .header__ul li {
   width: 50px;
   height: 50px;
-  border: 2px solid var(--iconColor);
+  color: var(--iconColor);
+  border: 2px solid var(--socialMediaIconBorderColor);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -151,7 +166,7 @@ body {
   cursor: pointer;
 }
 .header__ul li:hover {
-  background: var(--iconColor);
+  background: var(--socialMediaIconBorderColor);
   border: 2px solid transparent;
 }
 
@@ -243,7 +258,7 @@ body {
 .services__box {
   padding: 40px;
   background: var(--cardColor);
-  color: var(--hoverColor);
+  color: var(--cardFontColor);
   box-shadow: 0px 12px 24px rgb(2 30 84 / 10%);
   margin: 20px;
   transition: all 0.5s linear;
@@ -268,7 +283,7 @@ body {
 }
 .services__box-p {
   font-size: 14px;
-  color: var(--lightModeSubtitleColor);
+  color: var(--lightModeCardSubtitleColor);
 }
 .about {
   height: 100vh;
@@ -310,7 +325,7 @@ body {
   margin-top: 20px;
 }
 .info__contacts strong {
-  color: var(--commonBorder);
+  color: var(--aboutNames);
 }
 .info__contacts p {
   margin-top: 3px;
@@ -338,9 +353,9 @@ body {
   padding: 25px;
   border-radius: 8px;
   margin: 35px 20px;
-  color: var(--lightModeTitleColor);
+  color: var(--cardFontColor);
   text-align: center;
-  border-top: 4px solid var(--commonBorder);
+  border-top: 4px solid var(--cardBorderColor);
   box-shadow: 0px 12px 24px rgb(2 30 84 / 10%);
 }
 .priceHeading {
@@ -352,7 +367,7 @@ body {
   font-size: 70px;
   font-weight: 200;
   margin-bottom: 15px;
-  color: var(--commonBorder);
+  color: var(--percentCardColor);
 }
 .price__rs span {
   font-size: 25px;
@@ -365,7 +380,6 @@ body {
   border-bottom: 1px solid #3c3c3c;
   font-size: 18 px;
   padding: 15px 0;
-  color: var(--lightModeSubtitleColor);
 }
 .price__btn {
   margin-top: 40px;
@@ -833,10 +847,10 @@ textarea.input1 + .shadow-input1 {
 .input1 {
   display: block;
   width: 100%;
-  background: #fff;
+  background: var(--cardColor);
   font-size: 15px;
   line-height: 1.5;
-  color: #000;
+  color: #00AAF2;
   box-shadow: 0px 12px 24px rgb(2 30 84 / 10%);
   border: none;
 }
@@ -883,7 +897,7 @@ textarea.input1 + .shadow-input1 {
   min-width: 193px;
   height: 50px;
   border-radius: 2px;
-  background: #ff4a57;
+  background: var(--contactBtnColor);
   font-family: "Nunito";
   font-size: 15px;
   line-height: 1.5;

@@ -9,6 +9,7 @@ import {
   FaGithub,
   FaMedium,
   FaMediumM,
+  FaGooglePlay,
 } from "react-icons/fa";
 
 const Banner = (props) => {
@@ -25,9 +26,9 @@ const Banner = (props) => {
               <div className="header__section">
                 <ul className="header__ul" style={{ color: "#fff" }}>
                   <div className="jello-horizontal">
-                    <a href="https://facebook.com/rivaanranawat">
+                    <a href="https://play.google.com/store/apps/developer?id=Rivaan+Ranawat">
                       <li>
-                        <FaFacebookF className="headerIcon" />
+                        <FaGooglePlay className="headerIcon" />
                       </li>
                     </a>
                   </div>
