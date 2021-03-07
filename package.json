@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.2.1",
     "animate.css": "^4.1.1",
     "axios": "^0.21.1",
+    "bootstrap": "^4.6.0",
     "firebase": "^8.2.1",
     "github-repo-display-react": "^1.0.2",
     "lodash": "^4.17.20",
@@ -20,7 +21,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.3",
     "react-scroll": "^1.8.1",
-    "react-toggle": "^4.1.1",
+    "react-switch": "^6.0.0",
     "react-wow": "^1.0.0"
   },
   "scripts": {

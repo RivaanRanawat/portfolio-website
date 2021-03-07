@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Toggle from "react-toggle";
 import { useMediaQuery } from "react-responsive";
-
+import Switch from "react-switch";
 const DARK_CLASS = "dark";
 
 export const DarkToggle = () => {
@@ -26,14 +25,23 @@ export const DarkToggle = () => {
   }, [isDark]);
 
   return (
-    <div className="toogle">
-      <Toggle
+    /* {<Toggle
         className="DarkToggle"
         checked={isDark}
         onChange={(event) => setIsDark(event.target.checked)}
         icons={{ checked: "🌙", unchecked: "🔆" }}
         aria-label="Dark mode"
-      />
-    </div>
+      />} */
+    <Switch
+      className="DarkToggle"
+      checked={isDark}
+      onChange={(event) => setIsDark(event)}
+      checkedIcon="🔆"
+      uncheckedIcon="🌙"
+      onColor="#fff"
+      offColor="#021F34"
+      offHandleColor="#0556f3"
+      onHandleColor="#00AAF2"
+    />
   );
 };

@@ -424,20 +424,6 @@ body {
 .contactCircles li:hover {
   background: #ff4a57;
 }
-.toggle {
-  position: fixed;
-  top: 20px;
-  right: 25px;
-  background: #000;
-  color: #fff;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  display: none;
-}
 @media (max-width: 765px) {
   .container {
     width: 100%;
@@ -1119,46 +1105,3 @@ a:link {
   text-decoration: none;
 }
 
-.toggleee {
-  position: absolute;
-  cursor: pointer;
-  top: 20px;
-  right: 25px;
-  font-size: 150%;
-}
-
-.toggleee:before {
-  content: '☀️';
-}
-
-.toggleee.active:before {
-  content: '🌒';
-}
-
-.toggle.animate {
-  animation: animate .3s cubic-bezier(0.4, 0.0, 0.2, 1);
-}
-
-@keyframes animate {
-  0%   { transform: scale(1); }
-  50%  { transform: scale(0); }
-  100% { transform: scale(1); }
-}
-
-.wave {
-  position: absolute;
-  top: 35px;
-  right: 40px;
-  border-radius: 100%;
-  width: 2px;
-  height: 2px;
-  display: block;
-  z-index: -1;
-  box-shadow: 0 0 0 0 #212121;
-  transition: box-shadow .3s cubic-bezier(0.4, 0.0, 0.2, 1);
-}
-
-.wave.active {
-  background: #212121;
-  box-shadow: 0 0 0 9999px #212121;
-}

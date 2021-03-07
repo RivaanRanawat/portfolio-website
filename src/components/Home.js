@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
 import Banner from "./Banner";
-import Nav from "./Nav";
+import Navi from "./Nav";
 import Projects from "./Projects";
 import About from "./About";
 import Skills from "./Skills";
@@ -140,7 +140,7 @@ const Home = () => {
         </div>
       ) : (
         <div>
-          <Nav />
+          <Navi />
           <div>
             <span class="toggleee"></span>
             <span class="wave"></span>
