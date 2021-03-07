@@ -384,10 +384,6 @@ body {
 .price__btn {
   margin-top: 40px;
 }
-.contact {
-  padding: 100px 0;
-  background: #152136;
-}
 .contactSection-logo {
   text-align: center;
   margin-bottom: 20px;
@@ -402,28 +398,25 @@ body {
   margin-bottom: 20px;
 }
 
-.contactCircles {
-  width: 100%;
-  display: flex;
-  list-style: none;
-  justify-content: center;
-}
-.contactCircles li {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  background: #152136;
-  margin: 0 10px;
-  transition: all 0.5s linear;
-  cursor: pointer;
-}
 .contactCircles li:hover {
   background: #ff4a57;
 }
+
+.toggle {
+  position: fixed;
+  top: 20px;
+  right: 25px;
+  background: var(--socialMediaIconBorderColor);
+  color: var(--iconColor);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
 @media (max-width: 765px) {
   .container {
     width: 100%;
@@ -442,8 +435,9 @@ body {
     flex-direction: column;
     width: 100%;
     align-items: center;
-    background: #152136;
     position: fixed;
+    overflow: hidden;
+    color: #021F34;
     top: 0;
     left: 0;
   }

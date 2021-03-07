@@ -1,8 +1,18 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { DarkToggle } from "./DarkToggle";
+import { FaAlignJustify } from "react-icons/fa";
 
 const Nav = () => {
   const [state, setState] = React.useState(true);
+  const mq = window.matchMedia("(max-width: 765px)");
+  useEffect(() => {
+    if (mq.matches) {
+      setState(false);
+    } else {
+      setState(true);
+    }
+  }, [mq]);
+
   return (
     <nav className="navbar">
       <div className="container">
@@ -81,9 +91,9 @@ const Nav = () => {
           )}
         </div>
       </div>
-      {/* <div className="toggle" onClick={() => setState(!state)}>
+      <div className="toggle" onClick={() => setState(!state)}>
         <FaAlignJustify />
-      </div> */}
+      </div>
     </nav>
   );
 };

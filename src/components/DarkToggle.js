@@ -25,13 +25,6 @@ export const DarkToggle = () => {
   }, [isDark]);
 
   return (
-    /* {<Toggle
-        className="DarkToggle"
-        checked={isDark}
-        onChange={(event) => setIsDark(event.target.checked)}
-        icons={{ checked: "🌙", unchecked: "🔆" }}
-        aria-label="Dark mode"
-      />} */
     <Switch
       className="DarkToggle"
       checked={isDark}
