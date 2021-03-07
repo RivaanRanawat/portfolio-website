@@ -449,6 +449,7 @@ body {
   }
   .toggle {
     display: flex;
+    right: 150px;
   }
   .banner__img img {
     display: none;
@@ -464,6 +465,9 @@ body {
   }
   .h-650 {
     height: auto;
+  }
+  .header__ul {
+    margin-top: 100px;
   }
 }
 

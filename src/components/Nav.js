@@ -11,7 +11,7 @@ const Nav = () => {
     } else {
       setState(true);
     }
-  }, [mq]);
+  }, []);
 
   return (
     <nav className="navbar">
