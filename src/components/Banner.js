@@ -7,6 +7,8 @@ import {
   FaPlay,
   FaMouse,
   FaGithub,
+  FaMedium,
+  FaMediumM,
 } from "react-icons/fa";
 
 const Banner = (props) => {
@@ -23,38 +25,35 @@ const Banner = (props) => {
               <div className="header__section">
                 <ul className="header__ul" style={{ color: "#fff" }}>
                   <div className="jello-horizontal">
-                    <a href="https://facebook.com/rivaanranawat" style={{color: "#fff"}}>
+                    <a href="https://facebook.com/rivaanranawat">
                       <li>
                         <FaFacebookF className="headerIcon" />
                       </li>
                     </a>
                   </div>
                   <div className="jello-horizontal1">
-                    <a href="https://twitter.com/rivaanranawat" style={{color: "#fff"}}>
+                    <a href="https://namanrivaan.medium.com">
                       <li>
-                        <FaTwitter className="headerIcon" />
+                        <FaMediumM className="headerIcon" />
                       </li>
                     </a>
                   </div>
                   <div className="jello-horizontal2">
-                    <a href="https://github.com/rivaanranawat" style={{color: "#fff"}}>
+                    <a href="https://github.com/rivaanranawat">
                       <li>
                         <FaGithub className="headerIcon" />
                       </li>
                     </a>
                   </div>
                   <div className="jello-horizontal3">
-                    <a href="https://instagram.com/optimalcoding" style={{color: "#fff"}}>
+                    <a href="https://instagram.com/optimalcoding">
                       <li>
                         <FaInstagram className="headerIcon" />
                       </li>
                     </a>
                   </div>
                 </ul>
-                <h1
-                  className="tracking-in-contract-bck-bottom"
-                  style={{ color: "#fff" }}
-                >
+                <h1 className="tracking-in-contract-bck-bottom">
                   {props.title}
                 </h1>
                 <p className="text-focus-in">{props.subtitle}</p>
@@ -68,7 +67,7 @@ const Banner = (props) => {
                       animationName: "fadeInUp",
                     }}
                   >
-                    GitHub
+                    Resume
                   </a>
                   &nbsp;&nbsp;&nbsp;
                   <btn

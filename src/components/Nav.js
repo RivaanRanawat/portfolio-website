@@ -1,5 +1,5 @@
 import React from "react";
-import { FaAlignJustify } from "react-icons/fa";
+import { DarkToggle } from "./DarkToggle";
 
 const Nav = () => {
   const [state, setState] = React.useState(true);
@@ -7,7 +7,9 @@ const Nav = () => {
     <nav className="navbar">
       <div className="container">
         <div className="navbar__container">
-          <ul className="navbar__left"></ul>
+          <ul className="navbar__left">
+            <DarkToggle />
+          </ul>
           {state ? (
             <ul className="navbar__right">
               <li>
@@ -79,9 +81,9 @@ const Nav = () => {
           )}
         </div>
       </div>
-      <div className="toggle" onClick={() => setState(!state)}>
+      {/* <div className="toggle" onClick={() => setState(!state)}>
         <FaAlignJustify />
-      </div>
+      </div> */}
     </nav>
   );
 };

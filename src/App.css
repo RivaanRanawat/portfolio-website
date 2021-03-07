@@ -1,3 +1,17 @@
+@font-face {
+  font-family: "EuclidCicular";
+  src: local("EuclidCircularA-Bold"),
+    url("./fonts/EuclidCircularA-Bold.woff") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "EuclidCicularMedium";
+  src: local("EuclidCircularA-Medium"),
+    url("./fonts/EuclidCircularA-Medium.woff") format("truetype");
+  font-weight: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,16 +19,42 @@
 }
 
 html {
-  background-color: #152136;
+  /* background-color: #152136; */
+  --lightModeBackgroundColor: #f9fafc;
+  --lightModeTitleColor: #25265e;
+  --lightModeSubtitleColor: #25265eb3;
+  --navBarColor: rgb(255, 255, 255);
+  --cardColor: #fff;
+  --iconColor: #0056f3;
+  --insideIconColor: rgba(37, 38, 94, 0.7);
+  --commonBorder: #0556f3;
+  --hoverColor: #0556f3;
+  --btnColor: #fff;
+  background-color: var(--lightModeBackgroundColor);
+}
+
+@media (prefers-color-scheme: dark) {
+  html.dark {
+    --lightModeBackgroundColor: #242424;
+    --lightModeTitleColor: #e14eca;
+    --lightModeSubtitleColor: #ffffff91;
+    --iconColor: #fff;
+    --insideIconColor: #e14eca;
+    --navBarColor: #242424;
+    --cardColor: #1B1B1B;
+    --commonBorder: #00AAF2;
+    --hoverColor: #e14eca;
+    --btnColor: #e14eca;
+  }
 }
 
 body {
-  font-family: "Baloo Bhaijaan", sans-serif;
+  font-family: "EuclidCicular", sans-serif;
 }
 .header {
   width: 100%;
   height: 100vh;
-  background-color: #152136;
+  background-color: var(--lightmodebackgroundcolor);
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
@@ -24,7 +64,7 @@ body {
   height: 100px;
   position: absolute;
   top: 0;
-  background: #152136;
+  background: var(--navBarColor);
   z-index: 1;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
@@ -46,7 +86,7 @@ body {
 .navbar__right li btn {
   cursor: pointer;
   text-decoration: none;
-  color: #fff;
+  color: var(--iconColor);
   font-weight: 500;
   font-size: 18px;
   padding: 0 15px;
@@ -57,9 +97,9 @@ body {
   width: 1200px;
   margin: 0 auto;
 }
-.bgMain {
+/* .bgMain {
   background: #152136;
-}
+} */
 
 .h-650 {
   height: 650px;
@@ -91,7 +131,7 @@ body {
   align-items: center;
   height: 100vh;
   width: 100%;
-  color: #8B98AF;
+  color: var(--lightModeSubtitleColor);
 }
 .header__ul {
   list-style-type: none;
@@ -101,7 +141,7 @@ body {
 .header__ul li {
   width: 50px;
   height: 50px;
-  border: 2px solid #ff4a57;
+  border: 2px solid var(--iconColor);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -111,20 +151,18 @@ body {
   cursor: pointer;
 }
 .header__ul li:hover {
-  background: #fff;
+  background: var(--iconColor);
   border: 2px solid transparent;
-}
-.header__ul li:hover .headerIcon {
-  color: #ff4a57;
 }
 
 .header__ul li:first-child {
   margin-left: 0;
 }
 .header__section h1 {
+  font-family: "Ubuntu", sans-serif;
   font-size: 57px;
-  font-weight: 600;
   margin-bottom: 20px;
+  color: var(--lightModeTitleColor);
   animation-name: fadeInUp;
 }
 .header__section p {
@@ -141,11 +179,16 @@ body {
   text-decoration: none;
 }
 .btn-outline {
-  border: 2px solid #ff4a57;
+  border: 1px solid rgb(211, 220, 230);
+  background-color: var(--btnColor);
+  color: var(--iconColor);
+  border-radius: 5px 5px 5px 5px;
   padding: 13px 40px;
 }
 .btn-outline:hover {
-  background-color: #ff4a57;
+  color: #fff;
+  background-color: #0556f3;
+  border: 1px solid rgb(211, 220, 230);
 }
 .btn-smart {
   padding: 13px 20px;
@@ -166,9 +209,7 @@ body {
 
 /* Servives */
 .services {
-  background: #152136;
   padding: 30px 0;
-  color: #fff;
 }
 
 .common {
@@ -186,14 +227,14 @@ body {
 .mainHeader {
   font-size: 32px;
   margin-bottom: 20px;
-  color: #fff;
+  color: var(--lightModeTitleColor);
 }
 .mainContent {
-  font-size: 16px;
-  color: #dfdfdf;
+  font-size: 20px;
+  color: var(--lightModeTitleColor);
 }
 .commonBorder {
-  background: #ff4a57;
+  background: var(--commonBorder);
   height: 3px;
   width: 100px;
   margin: 30px auto;
@@ -201,17 +242,20 @@ body {
 
 .services__box {
   padding: 40px;
-  background: #152136;
-  color: #fff;
+  background: var(--cardColor);
+  color: var(--hoverColor);
+  box-shadow: 0px 12px 24px rgb(2 30 84 / 10%);
   margin: 20px;
   transition: all 0.5s linear;
 }
 .services__box:hover {
-  background: #ff4a57;
+  background: var(--hoverColor);
+  color: #fff;
 }
+
 .commonIcons {
   font-size: 40px;
-  color: #ff4a57;
+  color: var(--hoverColor);
   margin-bottom: 15px;
 }
 .services__box:hover .commonIcons {
@@ -224,12 +268,11 @@ body {
 }
 .services__box-p {
   font-size: 14px;
-  color: #dfdfdf;
+  color: var(--lightModeSubtitleColor);
 }
 .about {
   height: 100vh;
   width: 100%;
-  background: #152136;
   padding: 40px 0px;
   margin-bottom: 100px;
 }
@@ -247,31 +290,27 @@ body {
   height: 400px;
 }
 .about__info {
-  color: #fff;
+  color: var(--lightModeTitleColor);
 }
 .about__info h1 {
   font-size: 50px;
   margin-bottom: 30px;
 }
 .about__info-p1 {
-  font-family: "Nunito";
   font-size: 18px;
   margin-bottom: 20px;
+  color: var(--lightModeSubtitleColor);
 }
 .about__info-p2 {
   font-size: 18px;
-  font-family: "Nunito";
-}
-
-.aboutText {
-  font-family: "Nunito";
+  color: var(--lightModeSubtitleColor);
 }
 
 .info__contacts {
   margin-top: 20px;
 }
 .info__contacts strong {
-  color: #ff4a57;
+  color: var(--commonBorder);
 }
 .info__contacts p {
   margin-top: 3px;
@@ -283,24 +322,26 @@ body {
 .skills {
   width: 100%;
   padding: 6px 0;
-  background: #152136;
+  background: var(--lightmodebackgroundcolor);
 }
 
 @media only screen and (max-width: 600px) {
   .skills {
     width: 100%;
     padding: 690px 0;
-    background: #152136;
+    background: var(--lightmodebackgroundColor);
   }
 }
 
 .price {
-  background: #23263a;
+  background: var(--cardColor);
   padding: 25px;
   border-radius: 8px;
   margin: 35px 20px;
-  color: #fff;
+  color: var(--lightModeTitleColor);
   text-align: center;
+  border-top: 4px solid var(--commonBorder);
+  box-shadow: 0px 12px 24px rgb(2 30 84 / 10%);
 }
 .priceHeading {
   font-size: 24px;
@@ -311,6 +352,7 @@ body {
   font-size: 70px;
   font-weight: 200;
   margin-bottom: 15px;
+  color: var(--commonBorder);
 }
 .price__rs span {
   font-size: 25px;
@@ -321,8 +363,9 @@ body {
 .price ul li {
   margin: 5px 0;
   border-bottom: 1px solid #3c3c3c;
-  font-size: 14px;
+  font-size: 18 px;
   padding: 15px 0;
+  color: var(--lightModeSubtitleColor);
 }
 .price__btn {
   margin-top: 40px;
@@ -475,7 +518,7 @@ body {
 .text-focus-in {
   -webkit-animation: text-focus-in 1s ease-in both;
   animation: text-focus-in 1s ease-in both;
-  font-family: "Nunito", sans-serif;
+  font-family: EuclidCircularMedium, sans-serif;
 }
 
 @-webkit-keyframes text-focus-in {
@@ -506,21 +549,25 @@ body {
 .jello-horizontal {
   -webkit-animation: jello-horizontal 0.9s both;
   animation: jello-horizontal 0.9s both;
+  color: var(--insideIconColor)
 }
 
 .jello-horizontal1 {
   -webkit-animation: jello-horizontal 2s both;
   animation: jello-horizontal 2s both;
+  color: var(--insideIconColor);
 }
 
 .jello-horizontal2 {
   -webkit-animation: jello-horizontal 3.1s both;
   animation: jello-horizontal 3.1s both;
+  color: var(--insideIconColor);
 }
 
 .jello-horizontal3 {
   -webkit-animation: jello-horizontal 4.2s both;
   animation: jello-horizontal 4.2s both;
+  color: var(--insideIconColor);
 }
 
 @-webkit-keyframes jello-horizontal {
@@ -699,7 +746,7 @@ body {
   min-height: 100%;
   padding: 15px;
 
-  background: #152136;
+  background: VAR(--LIGHTMODEBACKGROUNDCOLOR);
   background: -webkit-linear-gradient(left, #0072ff, #00c6ff);
   background: -o-linear-gradient(left, #0072ff, #00c6ff);
   background: -moz-linear-gradient(left, #0072ff, #00c6ff);
@@ -717,7 +764,7 @@ body {
 
 .container-contact1 {
   width: 1163px;
-  background: #152136;
+  background: VAR(--LIGHTMODEBACKGROUNDCOLOR);
   border-radius: 10px;
   overflow: hidden;
 
@@ -752,7 +799,7 @@ body {
 .contact1-form-title {
   display: block;
   font-size: 24px;
-  color: #fff;
+  color: var(--lightModeSubtitleColor);
   line-height: 1.2;
   text-align: center;
   padding-bottom: 44px;
@@ -786,10 +833,11 @@ textarea.input1 + .shadow-input1 {
 .input1 {
   display: block;
   width: 100%;
-  background: #19273E;
+  background: #fff;
   font-size: 15px;
   line-height: 1.5;
-  color: #8b98af;
+  color: #000;
+  box-shadow: 0px 12px 24px rgb(2 30 84 / 10%);
   border: none;
 }
 
@@ -1011,7 +1059,7 @@ textarea.input1 + .shadow-input1 {
   width: 50px;
   height: 50px;
   border: #c80000;
-  background: #fff;
+  background: #0556f3;
   animation: animate 0.5s linear infinite;
   position: absolute;
   top: 0;
@@ -1053,7 +1101,50 @@ textarea.input1 + .shadow-input1 {
   }
 }
 
-
-a:link{
+a:link {
   text-decoration: none;
+}
+
+.toggleee {
+  position: absolute;
+  cursor: pointer;
+  top: 20px;
+  right: 25px;
+  font-size: 150%;
+}
+
+.toggleee:before {
+  content: '☀️';
+}
+
+.toggleee.active:before {
+  content: '🌒';
+}
+
+.toggle.animate {
+  animation: animate .3s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+@keyframes animate {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+
+.wave {
+  position: absolute;
+  top: 35px;
+  right: 40px;
+  border-radius: 100%;
+  width: 2px;
+  height: 2px;
+  display: block;
+  z-index: -1;
+  box-shadow: 0 0 0 0 #212121;
+  transition: box-shadow .3s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.wave.active {
+  background: #212121;
+  box-shadow: 0 0 0 9999px #212121;
 }

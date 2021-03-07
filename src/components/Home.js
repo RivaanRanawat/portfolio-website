@@ -132,46 +132,50 @@ const Home = () => {
   }, []);
 
   return (
-      <div className="app">
-        {isLoading ? (
-          <div id="loader">
-            <div id="shadow"></div>
-            <div id="box"></div>
-          </div>
-        ) : (
+    <div className="app">
+      {isLoading ? (
+        <div id="loader">
+          <div id="shadow"></div>
+          <div id="box"></div>
+        </div>
+      ) : (
+        <div>
+          <Nav />
           <div>
-            <Nav />
-            <Banner title={title} subtitle={subtitle} />
-            <About
-              para1={para1}
-              para2={para2}
-              headerr={headerr}
-              email={email}
-              name={name}
-              phone={phone}
-            />
-            <Skills
-              des={des}
-              gamesArray={gamesArray}
-              technologyArray={technologyArray}
-              languageArray={languageArray}
-              techPercent={techPercent}
-              gamingPercent={gamingPercent}
-              langPercent={langPercent}
-            />
-            <Projects
-              desc={desc}
-              project1Name={project1Name}
-              project2Name={project2Name}
-              project3Name={project3Name}
-              project4Name={project4Name}
-              project5Name={project5Name}
-              project6Name={project6Name}
-            />
-            <Contact />
+            <span class="toggleee"></span>
+            <span class="wave"></span>
           </div>
-        )}
-      </div>
+          <Banner title={title} subtitle={subtitle} />
+          <About
+            para1={para1}
+            para2={para2}
+            headerr={headerr}
+            email={email}
+            name={name}
+            phone={phone}
+          />
+          <Skills
+            des={des}
+            gamesArray={gamesArray}
+            technologyArray={technologyArray}
+            languageArray={languageArray}
+            techPercent={techPercent}
+            gamingPercent={gamingPercent}
+            langPercent={langPercent}
+          />
+          <Projects
+            desc={desc}
+            project1Name={project1Name}
+            project2Name={project2Name}
+            project3Name={project3Name}
+            project4Name={project4Name}
+            project5Name={project5Name}
+            project6Name={project6Name}
+          />
+          <Contact />
+        </div>
+      )}
+    </div>
   );
 };
 

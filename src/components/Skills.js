@@ -53,7 +53,7 @@ const Skills = () => {
           <Flip left>
             <div className="col-4">
               <div className="price">
-                <div className="priceHeading">Technologies</div>
+                <div className="priceHeading">TECHNOLOGIES</div>
                 <div className="price__rs">
                   {techPercent}
                   <span>%</span>
@@ -75,7 +75,7 @@ const Skills = () => {
           <Flip top>
             <div className="col-4">
               <div className="price">
-                <div className="priceHeading">PROGRAMMING LANGUAGES</div>
+                <div className="priceHeading">PROGRAMMING</div>
                 <div className="price__rs">
                   {langPercent}
                   <span>%</span>

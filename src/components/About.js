@@ -1,10 +1,9 @@
-import React,{useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import Zoom from "react-reveal/Zoom";
 import Fade from "react-reveal/Fade";
-import {db} from "../configs/firebase";
+import { db } from "../configs/firebase";
 
 const About = (props) => {
-
   const [para1, setPara1] = useState("");
   const [para2, setPara2] = useState("");
   const [email, setEmail] = useState("");
@@ -42,7 +41,7 @@ const About = (props) => {
         setName(tempName);
         setPhone(tempPhone);
       });
-  }, [])
+  }, []);
   return (
     <div className="about">
       <div className="container">
@@ -55,7 +54,9 @@ const About = (props) => {
           <div className="col-6">
             <Zoom>
               <div className="about__img">
-                <img src="/images/my-avatar.png" alt="avatar" />
+                <a href="https://instagram.com/optimalcoding">
+                  <img src="/images/logo.png" alt="optimalcoding" />
+                </a>
               </div>
             </Zoom>
           </div>
@@ -66,36 +67,32 @@ const About = (props) => {
               </Fade>
 
               <Fade right>
-                <div className="about__info-p1">
-                  {para1}
-                </div>
+                <div className="about__info-p1">{para1}</div>
               </Fade>
 
               <Fade right>
-                <div className="about__info-p2">
-                  {para2}
-                </div>
+                <div className="about__info-p2">{para2}</div>
               </Fade>
 
               <Fade bottom>
                 <div className="info__contacts">
                   <div className="row">
-                      <div className="col-6">
-                        <strong className="aboutText">Name: </strong>
-                        <p className="aboutText">{name}</p>
-                      </div>
-                      <div className="col-6">
-                        <strong className="aboutText">Email:</strong>
-                        <p className="aboutText">{email}</p>
-                      </div>
-                      <div className="col-6">
-                        <strong className="aboutText">Phone:</strong>
-                        <p className="aboutText">{phone}</p>
-                      </div>
-                      <div className="col-6">
-                        <strong className="aboutText">GitHub:</strong>
-                        <p className="aboutText">rivaanranawat</p>
-                      </div>
+                    <div className="col-6">
+                      <strong className="aboutText">Name: </strong>
+                      <p className="aboutText">{name}</p>
+                    </div>
+                    <div className="col-6">
+                      <strong className="aboutText">Email:</strong>
+                      <p className="aboutText">{email}</p>
+                    </div>
+                    <div className="col-6">
+                      <strong className="aboutText">Phone:</strong>
+                      <p className="aboutText">{phone}</p>
+                    </div>
+                    <div className="col-6">
+                      <strong className="aboutText">GitHub:</strong>
+                      <p className="aboutText">rivaanranawat</p>
+                    </div>
                   </div>
                 </div>
               </Fade>

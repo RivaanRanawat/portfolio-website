@@ -47,11 +47,11 @@ const Contact = () => {
   return (
     <div class="contact1">
       <Fade top>
-        <h1 style={{ color: "#fff", fontSize: "5vh" }}>Contact Me</h1>
+        <h1 style={{ color: "#0556f3", fontSize: "5vh" }}>Contact Me</h1>
       </Fade>
       <div class="container-contact1">
         <div class="contact1-pic js-tilt" data-tilt>
-          <img src="images/img-01.png" alt="IMG" />
+          <img src="images/rrrlogo.png" alt="IMG" />
         </div>
 
         <form className="contact1-form validate-form" onSubmit={handleSubmit}>
