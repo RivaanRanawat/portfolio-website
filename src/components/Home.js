@@ -7,6 +7,7 @@ import About from "./About";
 import Skills from "./Skills";
 import Contact from "./Contact";
 import { db } from "../configs/firebase";
+import Blog from "./Blog";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -172,6 +173,7 @@ const Home = () => {
             project5Name={project5Name}
             project6Name={project6Name}
           />
+          <Blog />
           <Contact />
         </div>
       )}

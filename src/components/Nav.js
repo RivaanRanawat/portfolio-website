@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { DarkToggle } from "./DarkToggle";
 import { FaAlignJustify } from "react-icons/fa";
 
@@ -71,7 +71,16 @@ const Nav = () => {
                 </btn>
               </li>
               <li>
-                <btn>Blog</btn>
+                <btn
+                  onClick={() => {
+                    let destination = document.querySelector(".blogPage");
+                    destination.scrollIntoView({
+                      behavior: "smooth",
+                    });
+                  }}
+                >
+                  Latest
+                </btn>
               </li>
               <li>
                 <btn

@@ -255,6 +255,13 @@ body {
   margin: 30px auto;
 }
 
+.commonBorder1 {
+  background: var(--commonBorder);
+  height: 3px;
+  width: 100px;
+  margin: 30px auto;
+}
+
 .services__box {
   padding: 40px;
   background: var(--cardColor);
@@ -265,6 +272,24 @@ body {
 }
 .services__box:hover {
   background: var(--hoverColor);
+  color: #fff;
+}
+
+.services__box1 {
+  height: 250px;
+  padding: 40px;
+  background: var(--cardColor);
+  color: var(--cardFontColor);
+  box-shadow: 0px 12px 24px rgb(2 30 84 / 10%);
+  margin: 20px;
+  transition: all 0.5s linear;
+}
+.services__box1:hover {
+  background: var(--hoverColor);
+  color: #fff;
+}
+
+.services__box1:hover .commonIcons {
   color: #fff;
 }
 
