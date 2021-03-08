@@ -11,7 +11,6 @@ export default function Blog() {
 
   useEffect(() => {
     getAllTitle();
-    console.log(arr.length);
   }, []);
 
   const getAllTitle = () => {
@@ -29,9 +28,12 @@ export default function Blog() {
     return (
       <div className="services">
         <div className="container">
-          <div className="blogPage">
-            <h1 className="mainHeader">Latest From Medium..</h1>
-          </div>
+          <center>
+            <div className="blogPage">
+              <h1 className="mainHeader">Latest From Medium</h1>
+              <div className="commonBorder"></div>
+            </div>
+          </center>
           <div className="row bgMain">
             {arr.map((item, idx) => {
               return (

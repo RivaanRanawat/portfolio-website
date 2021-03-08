@@ -128,18 +128,22 @@ const Home = () => {
       function () {
         setIsLoading(false);
       }.bind(this),
-      Math.floor(Math.random() * 2000) + 100
+      Math.floor(Math.random() * 500) + 100
     );
   }, []);
 
-  return (
-    <div className="app">
-      {isLoading ? (
+  if (isLoading === true) {
+    return (
+      <div className="app">
         <div id="loader">
           <div id="shadow"></div>
           <div id="box"></div>
         </div>
-      ) : (
+      </div>
+    );
+  } else {
+    return (
+      <div className="app">
         <div>
           <Navi />
           <div>
@@ -176,9 +180,9 @@ const Home = () => {
           <Blog />
           <Contact />
         </div>
-      )}
-    </div>
-  );
+      </div>
+    );
+  }
 };
 
 export default Home;

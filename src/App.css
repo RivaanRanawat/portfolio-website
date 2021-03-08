@@ -255,6 +255,10 @@ body {
   margin: 30px auto;
 }
 
+.blogPage {
+  float: center;
+}
+
 .commonBorder1 {
   background: var(--commonBorder);
   height: 3px;
