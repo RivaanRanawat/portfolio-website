@@ -18,7 +18,7 @@
   box-sizing: border-box;
 }
 
-html {
+html.light {
   /* background-color: #152136; */
   --lightModeBackgroundColor: #f9fafc;
   --lightModeTitleColor: #25265e;
@@ -59,6 +59,7 @@ html {
     --cardBorderColor: #00AAF2;
     --contactBtnColor: #00AAF2;
     --socialMediaIconBorderColor: #00AAF2;
+    background-color: var(--lightModeBackgroundColor);
   }
 }
 
@@ -1132,3 +1133,14 @@ a:link {
   text-decoration: none;
 }
 
+.header404 {
+  text-align: center;
+  font-size: 25rem;
+  color: var(--lightModeTitleColor);
+}
+
+.pageNotFound-p {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--lightModeSubtitleColor);
+}

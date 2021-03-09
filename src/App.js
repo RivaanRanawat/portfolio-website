@@ -7,6 +7,7 @@ import Skills from "./components/Skills";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Blog from "./components/Blog";
+import PageNotFound from "./components/PageNotFound";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
           <Route path="/latest" component={Blog} />
+          <Route path="*" exact component={PageNotFound} />
         </Switch>
       </Router>
     </div>
