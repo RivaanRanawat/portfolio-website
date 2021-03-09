@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
 import Switch from "react-switch";
 const DARK_CLASS = "dark";
-const LIGHT_CLASS = "light";
 
 export const DarkToggle = () => {
   const systemPrefersDark = useMediaQuery(
@@ -19,11 +18,9 @@ export const DarkToggle = () => {
 
   useEffect(() => {
     if (isDark) {
-      document.documentElement.classList.remove(LIGHT_CLASS);
       document.documentElement.classList.add(DARK_CLASS);
     } else {
       document.documentElement.classList.remove(DARK_CLASS);
-      document.documentElement.classList.add(LIGHT_CLASS);
     }
   }, [isDark]);
 

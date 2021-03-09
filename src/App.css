@@ -18,7 +18,7 @@
   box-sizing: border-box;
 }
 
-html.light {
+html {
   /* background-color: #152136; */
   --lightModeBackgroundColor: #f9fafc;
   --lightModeTitleColor: #25265e;
@@ -42,23 +42,23 @@ html.light {
 
 @media (prefers-color-scheme: dark) {
   html.dark {
-    --lightModeBackgroundColor: #021F34;
+    --lightModeBackgroundColor: #021f34;
     --lightModeTitleColor: #fff;
     --lightModeSubtitleColor: #98c0c6;
     --iconColor: #fff;
     --insideIconColor: #e14eca;
-    --navBarColor: #021F34;
-    --cardColor: #01162A;
-    --commonBorder: #00AAF2;
-    --hoverColor: #00AAF2;
-    --btnColor: #00AAF2;
-    --aboutNames: #00AAF2;
+    --navBarColor: #021f34;
+    --cardColor: #01162a;
+    --commonBorder: #00aaf2;
+    --hoverColor: #00aaf2;
+    --btnColor: #00aaf2;
+    --aboutNames: #00aaf2;
     --cardFontColor: #98c0c6;
     --lightModeCardSubtitleColor: #fff;
-    --percentCardColor: #00AAF2;
-    --cardBorderColor: #00AAF2;
-    --contactBtnColor: #00AAF2;
-    --socialMediaIconBorderColor: #00AAF2;
+    --percentCardColor: #00aaf2;
+    --cardBorderColor: #00aaf2;
+    --contactBtnColor: #00aaf2;
+    --socialMediaIconBorderColor: #00aaf2;
     background-color: var(--lightModeBackgroundColor);
   }
 }
@@ -467,7 +467,7 @@ body {
     align-items: center;
     position: fixed;
     overflow: hidden;
-    color: #021F34;
+    color: #021f34;
     top: 0;
     left: 0;
   }
@@ -577,7 +577,7 @@ body {
 .jello-horizontal {
   -webkit-animation: jello-horizontal 0.9s both;
   animation: jello-horizontal 0.9s both;
-  color: var(--insideIconColor)
+  color: var(--insideIconColor);
 }
 
 .jello-horizontal1 {
@@ -864,7 +864,7 @@ textarea.input1 + .shadow-input1 {
   background: var(--cardColor);
   font-size: 15px;
   line-height: 1.5;
-  color: #00AAF2;
+  color: #00aaf2;
   box-shadow: 0px 12px 24px rgb(2 30 84 / 10%);
   border: none;
 }
