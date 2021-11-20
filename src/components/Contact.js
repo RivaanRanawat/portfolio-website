@@ -1,11 +1,4 @@
 import React, { useState } from "react";
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaPinterest,
-  FaInstagram,
-  FaPlay,
-} from "react-icons/fa";
 import { db } from "../configs/firebase";
 import Fade from "react-reveal/Fade";
 
@@ -47,16 +40,13 @@ const Contact = () => {
   return (
     <div class="contact1">
       <Fade top>
-        <h1 style={{ color: "#0556f3", fontSize: "5vh" }}>Contact Me</h1>
+        <h1 className="contactHeader">Contact Me</h1>
       </Fade>
       <div class="container-contact1">
         <div class="contact1-pic js-tilt" data-tilt>
-          <img src="images/rrrlogo.png" alt="IMG" />
         </div>
-
         <form className="contact1-form validate-form" onSubmit={handleSubmit}>
           <span className="contact1-form-title">Get in touch</span>
-
           <Fade right duration={500}>
             <div
               className="wrap-input1 validate-input"

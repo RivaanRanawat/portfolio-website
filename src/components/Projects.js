@@ -61,8 +61,7 @@ const Projects = () => {
           <Fade top>
             <div className="common">
               {/* <h3 className="heading"></h3> */}
-              <h1 className="mainHeader">My Projects</h1>
-              <p className="mainContent">{desc}</p>
+              <h1 className="mainHeader">My Favourite Projects</h1>
               <div className="commonBorder"></div>
             </div>
           </Fade>

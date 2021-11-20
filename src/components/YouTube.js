@@ -1,14 +1,16 @@
 import React, { useEffect, useState, useContext } from "react";
 import "../App.css";
-import Fade from "react-reveal/Fade";
-import { FaBook, FaMediumM } from "react-icons/fa";
+import { FaBook, FaMediumM, FaYoutube } from "react-icons/fa";
 import axios from "axios";
 
-export default function Blog() {
+export default function YouTube() {
   const [arr, setArr] = useState([]);
-  const [isShowAllBlogs, setIsShowAllBlogs] = useState(false);
+  const [isShowAllVideos, setIsShowAllVideos] = useState(false);
+
+  // https://youtube.googleapis.com/youtube/v3/search?key=AIzaSyAIk4EsruO40NOKa7V-n14nKN1Eh1sHc64&channelId=UC-1kzHtwBY8n0TY5NhYxNaw&part=snippet,id&order=date&maxResults=10
+
   const url =
-    "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@namanrivaan";
+    "https://youtube.googleapis.com/youtube/v3/search?key=AIzaSyAIk4EsruO40NOKa7V-n14nKN1Eh1sHc64&channelId=UC-1kzHtwBY8n0TY5NhYxNaw&part=snippet,id&order=date&maxResults=10";
 
   useEffect(() => {
     getAllTitle();
@@ -18,9 +20,9 @@ export default function Blog() {
     axios
       .get(url)
       .then((res) => {
-        const allData = res.data.items;
-        setArr(allData);
-        console.log(allData);
+        res.data.items.map((item) => {
+            setArr((prev) => [...prev, {title: item.snippet.title, id: item.id.videoId}]);
+        })
       })
       .catch((err) => console.error(`Error: ${err}`));
   };
@@ -30,20 +32,20 @@ export default function Blog() {
       <div className="services">
         <div className="container">
           <center>
-            <div className="blogPage">
-              <h1 className="mainHeader">Latest From Medium</h1>
+            <div className="ytPage">
+              <h1 className="mainHeader">Latest From YouTube</h1>
               <div className="commonBorder"></div>
             </div>
           </center>
           <div className="row bgMain">
-            {!isShowAllBlogs
+            {!isShowAllVideos
               ? arr.slice(0, 6).map((item, idx) => {
                   return (
                     <div className="col-4 bgMain">
-                      <a href={arr[idx]["link"]} target="_blank" rel="noopener">
+                      <a href={`https://www.youtube.com/watch?v=${item["id"]}`} target="_blank" rel="noopener">
                         <div className="services__box1">
                           <br></br>
-                          <FaMediumM className="commonIcons" />
+                          <FaYoutube className="commonIcons" />
                           <div className="services__box-header">
                             {item["title"]}
                           </div>
@@ -58,7 +60,7 @@ export default function Blog() {
                       <a href={arr[idx]["link"]} target="_blank" rel="noopener">
                         <div className="services__box1">
                           <br></br>
-                          <FaMediumM className="commonIcons" />
+                          <FaYoutube className="commonIcons" />
                           <div className="services__box-header">
                             {item["title"]}
                           </div>
@@ -71,10 +73,10 @@ export default function Blog() {
           <div
             className="price__btn"
             style={{ display: "flex", justifyContent: "center" }}
-            onClick={() => setIsShowAllBlogs(!isShowAllBlogs)}
+            onClick={() => setIsShowAllVideos(!isShowAllVideos)}
           >
             <a className="btn btn-outline">
-              {isShowAllBlogs ? 'Read Less':  'Read More'}
+              {isShowAllVideos ? 'See Less':  'See More'}
             </a>
           </div>
         </div>

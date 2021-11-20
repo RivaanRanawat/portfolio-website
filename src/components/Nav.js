@@ -46,7 +46,7 @@ const Nav = () => {
                   About
                 </btn>
               </li>
-              <li>
+              {/* <li>
                 <btn
                   onClick={() => {
                     let destination = document.querySelector(".skills");
@@ -57,7 +57,7 @@ const Nav = () => {
                 >
                   Skills
                 </btn>
-              </li>
+              </li> */}
               <li>
                 <btn
                   onClick={() => {
@@ -79,7 +79,19 @@ const Nav = () => {
                     });
                   }}
                 >
-                  Latest
+                  Blogs
+                </btn>
+              </li>
+              <li>
+                <btn
+                  onClick={() => {
+                    let destination = document.querySelector(".ytPage");
+                    destination.scrollIntoView({
+                      behavior: "smooth",
+                    });
+                  }}
+                >
+                  YouTube
                 </btn>
               </li>
               <li>

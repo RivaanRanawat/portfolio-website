@@ -8,6 +8,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Blog from "./components/Blog";
 import PageNotFound from "./components/PageNotFound";
+import YouTube from "./components/YouTube";
 
 const App = () => {
   return (
@@ -16,10 +17,11 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/projects" component={Projects} />
-          <Route path="/skills" component={Skills} />
+          {/* <Route path="/skills" component={Skills} /> */}
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
-          <Route path="/latest" component={Blog} />
+          <Route path="/blogs" component={Blog} />
+          <Route path="/youtube" component={YouTube} />
           <Route path="*" exact component={PageNotFound} />
         </Switch>
       </Router>

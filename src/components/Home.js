@@ -8,6 +8,7 @@ import Skills from "./Skills";
 import Contact from "./Contact";
 import { db } from "../configs/firebase";
 import Blog from "./Blog";
+import YouTube from "./YouTube";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -159,7 +160,7 @@ const Home = () => {
             name={name}
             phone={phone}
           />
-          <Skills
+          {/* <Skills
             des={des}
             gamesArray={gamesArray}
             technologyArray={technologyArray}
@@ -167,7 +168,7 @@ const Home = () => {
             techPercent={techPercent}
             gamingPercent={gamingPercent}
             langPercent={langPercent}
-          />
+          /> */}
           <Projects
             desc={desc}
             project1Name={project1Name}
@@ -178,6 +179,7 @@ const Home = () => {
             project6Name={project6Name}
           />
           <Blog />
+          <YouTube />
           <Contact />
         </div>
       </div>

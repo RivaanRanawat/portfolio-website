@@ -193,10 +193,11 @@ body {
   border: none;
   color: #fff;
   text-decoration: none;
+  cursor: pointer;
 }
 .btn-outline {
   border: 1px solid rgb(211, 220, 230);
-  background-color: var(--btnColor);
+  background-color: var(--cardColor);
   color: var(--iconColor);
   border-radius: 5px 5px 5px 5px;
   padding: 13px 40px;
@@ -257,6 +258,10 @@ body {
 }
 
 .blogPage {
+  float: center;
+}
+
+.ytPage {
   float: center;
 }
 
@@ -786,8 +791,14 @@ body {
   display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.contactHeader {
+  color: var(--lightModeTitleColor);
+  font-size: 5vh;
 }
 
 .container-contact1 {
@@ -795,11 +806,6 @@ body {
   background: VAR(--LIGHTMODEBACKGROUNDCOLOR);
   border-radius: 10px;
   overflow: hidden;
-
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -808,8 +814,6 @@ body {
   padding: 90px 130px 88px 148px;
 }
 
-/*------------------------------------------------------------------
-[  ]*/
 .contact1-pic {
   width: 296px;
 }
@@ -818,8 +822,6 @@ body {
   max-width: 100%;
 }
 
-/*------------------------------------------------------------------
-[  ]*/
 .contact1-form {
   width: 390px;
 }
